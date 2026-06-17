@@ -1,102 +1,98 @@
-//src/data/projects.js
-import EvadegptImage from '../assets/evadegpt.jpg'
-//import AkaImage from '../assets/aka-color.jpg'
-//import FireRobotImage from '../assets/fire-robot.jpg'
-//import JobAnalyticsImage from '../assets/job-analytics.jpg'
-//import CvDetectImage from '../assets/cv-detect.jpg'
-//import FakeStoreImage from '../assets/fake-store.jpg'
-//import LaravelImage from '../assets/laravel.jpg'
-//import P5Image from '../assets/p5.jpg'
+import EvadeImg    from '../assets/evadegpt.jpg'
+import FireImg     from '../assets/firefighter.png'
+import FitnessImg  from '../assets/fitnessvibes.png'
+import EcomImg     from '../assets/fakeecom.png'
+import TicTacImg   from '../assets/tictactoe.png'
 
-const GH = 'https://github.com/VaibhavJha-github';
+const GH = 'https://github.com/VaibhavJha-github'
 
-const projects = [
+export const projects = [
   {
-    id: 'eluragpt',
-    title: 'EluraGPT — AI Humanizer',
-    description: 'Subscription SaaS that humanizes LLM text for natural style while preserving meaning.',
-    bullets: [
-      'Auth + billing + usage limits',
-      'Mobile-first UI with matte blue styling',
-      'Meta Pixel + CAPI funnel analytics'
-    ],
-    tags: ['Next.js', 'TypeScript', 'Supabase', 'Stripe', 'OpenAI/GPT'],
-    image: EvadegptImage,
-    github: `${GH}`,               // replace with repo when public
-    demo: 'https://www.evadegpt.ai/',
-    featured: true
+    id:          'evadegpt',
+    title:       'EvadeGPT — AI Humanizer',
+    type:        'SaaS Product',
+    description: 'A subscription SaaS that detects AI-generated content and rewrites it to sound natural. Full-stack with Stripe billing, Google OAuth, and a custom NLP pipeline built on FastAPI.',
+    tags:        ['Next.js', 'FastAPI', 'Python', 'Stripe', 'Supabase', 'Google OAuth'],
+    image:       EvadeImg,
+    github:      null,
+    demo:        'https://www.evadegpt.ai/',
+    featured:    true,
   },
   {
-    id: 'aka-color',
-    title: 'AI Colour Management System (WIL, AKA Studio)',
-    description: 'Python/OpenCV pipeline to automate colour accuracy across devices.',
-    bullets: ['~40% reduction in manual adjustments', 'Profile prediction for multiple resolutions'],
-    tags: ['Python', 'OpenCV', 'Machine Learning'],
-    image: AkaImage,
-    github: `${GH}`,               // point to specific repo if public
-    demo: '',
-    featured: true
+    id:          'fire-robot',
+    title:       'Autonomous Firefighting Simulation',
+    type:        'Robotics',
+    description: 'A multi-robot system in ROS and Gazebo where autonomous agents detect and suppress simulated fires. Formal verification using the PAT model checker validates agent behaviour properties.',
+    tags:        ['C++', 'ROS', 'Gazebo', 'PAT', 'Python'],
+    image:       FireImg,
+    github:      `${GH}/ROS-PAT-Autonomous-Firefighting-Simulation`,
+    demo:        null,
+    featured:    false,
   },
   {
-    id: 'fire-robot',
-    title: 'Multi-Robot Fire Response',
-    description: 'ROS Noetic + CSP (PAT) planning; refill-aware task execution.',
-    bullets: ['3 fires/tank; auto-refill & resume', 'Gazebo simulation + obstacle avoidance'],
-    tags: ['ROS', 'C++', 'Python', 'CSP', 'Gazebo'],
-    image: FireRobotImage,
-    github: `${GH}`,
-    demo: ''
+    id:          'aka-color',
+    title:       'AI Colour Management System',
+    type:        'Computer Vision',
+    description: 'Automated colour tracking and management system built for aka studio during an internship. Reduced manual colour correction time by approximately 40% through real-time OpenCV processing.',
+    tags:        ['Python', 'OpenCV', 'Machine Learning'],
+    image:       null,
+    github:      null,
+    demo:        null,
+    featured:    false,
   },
   {
-    id: 'job-analytics',
-    title: 'Job Market Analytics',
-    description: 'EDA + dashboards with sectoral salary comparisons and diffusion patterns.',
-    bullets: ['Interactive Plotly charts', 'Notebook + report'],
-    tags: ['Python', 'Pandas', 'Matplotlib', 'Plotly', 'Seaborn'],
-    image: JobAnalyticsImage,
-    github: `${GH}`,
-    demo: ''
+    id:          'fitness-app',
+    title:       'React Native Fitness App',
+    type:        'Mobile App',
+    description: 'A cross-platform fitness tracking mobile app with workout logging, an exercise library, and step-by-step instructions. Built with React Native and TypeScript.',
+    tags:        ['React Native', 'TypeScript'],
+    image:       FitnessImg,
+    github:      `${GH}/FitnessApp-ReactNative`,
+    demo:        null,
+    featured:    false,
   },
   {
-    id: 'cv-detect',
-    title: 'CV: Fashion-MNIST + Detectron2',
-    description: 'Image classifiers (MLP/CNN) and object detection experimentation.',
-    bullets: ['Training/validation reporting', 'Model comparison'],
-    tags: ['TensorFlow/PyTorch', 'Detectron2', 'OpenCV'],
-    image: CvDetectImage,
-    github: `${GH}`,
-    demo: ''
+    id:          'fake-store',
+    title:       'Fake Store E-commerce App',
+    type:        'Mobile App',
+    description: 'A feature-complete e-commerce mobile app with cart management, product browsing, and API integration. Demonstrates Redux Toolkit state management patterns.',
+    tags:        ['React Native', 'Redux Toolkit', 'JavaScript'],
+    image:       EcomImg,
+    github:      `${GH}/FakeStore-React-Native`,
+    demo:        null,
+    featured:    false,
   },
   {
-    id: 'fake-store',
-    title: '“Fake Store” Mobile App',
-    description: 'React Native app consuming Fake Store API with cart flows.',
-    bullets: ['API integration', 'State management', 'Responsive UI'],
-    tags: ['React Native', 'JavaScript', 'API'],
-    image: FakeStoreImage,
-    github: `${GH}`,
-    demo: ''
+    id:          'job-analytics',
+    title:       'Job Market Analytics Dashboard',
+    type:        'Data Science',
+    description: 'Exploratory data analysis of job market trends. Interactive Plotly and Seaborn dashboards reveal demand patterns across industries, locations, and role types.',
+    tags:        ['Python', 'Pandas', 'Plotly', 'Seaborn', 'Matplotlib'],
+    image:       null,
+    github:      `${GH}`,
+    demo:        null,
+    featured:    false,
   },
   {
-    id: 'laravel-webapp',
-    title: 'Secure Laravel Web Application',
-    description: 'Dynamic app with secure SDLC practices and OWASP awareness.',
-    bullets: ['Auth patterns, form security', 'Data CRUD + MySQL'],
-    tags: ['PHP', 'Laravel', 'MySQL', 'Cybersecurity'],
-    image: LaravelImage,
-    github: `${GH}`,
-    demo: ''
+    id:          'cv-detect',
+    title:       'Fashion-MNIST & Detectron2',
+    type:        'Computer Vision',
+    description: 'Image classification on Fashion-MNIST with CNN architectures, plus object detection experiments using Facebook\'s Detectron2. Compares PyTorch and TensorFlow implementations.',
+    tags:        ['Python', 'TensorFlow', 'PyTorch', 'Detectron2', 'OpenCV'],
+    image:       null,
+    github:      `${GH}`,
+    demo:        null,
+    featured:    false,
   },
   {
-    id: 'creative-p5',
-    title: 'Creative Coding (p5.js + p5Play)',
-    description: 'Interactive visual sketches and mini-experiences.',
-    bullets: ['2D graphics via code', 'Playable demos'],
-    tags: ['JavaScript', 'p5.js'],
-    image: P5Image,
-    github: `${GH}`,
-    demo: ''
-  }
+    id:          'tictactoe',
+    title:       'Tic-Tac-Toe',
+    type:        'Web Game',
+    description: 'A classic Tic-Tac-Toe game in vanilla JavaScript. Win detection algorithm, clean interface, and no external dependencies.',
+    tags:        ['JavaScript', 'HTML', 'CSS'],
+    image:       TicTacImg,
+    github:      `${GH}/JavaScript-TicTacToe-Game`,
+    demo:        null,
+    featured:    false,
+  },
 ]
-
-export default projects

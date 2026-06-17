@@ -1,13 +1,13 @@
 import { Routes, Route } from 'react-router-dom'
-import Sidebar from './components/Sidebar'
+import Navbar from './components/Navbar'
 import HomePage from './pages/HomePage'
 import ProjectsPage from './pages/ProjectsPage'
 
 export default function App() {
   return (
     <>
-      <Sidebar />
-      <main className="main-content">
+      <Navbar />
+      <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />

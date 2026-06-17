@@ -1,35 +1,60 @@
-import { FaGithub } from 'react-icons/fa'
-import { FiExternalLink } from 'react-icons/fi'
+import { FiGithub, FiExternalLink } from 'react-icons/fi'
 
-export default function ProjectCard({
-  title, description, tags = [], image, link, bullets = [], github, demo, featured = false
-}) {
+export default function ProjectCard({ project }) {
+  const { title, type, description, tags = [], image, github, demo, featured } = project
+
+  const hasLinks = github || demo
+
   return (
-    <article className={`project-card reveal ${featured ? 'featured' : ''}`} data-reveal>
-      {image && <img className="thumb" src={image} alt={title} loading="lazy" />}
-      <div className="project-card-content">
-        <h3>{title}</h3>
-        <p>{description}</p>
-        {bullets?.length > 0 && (
-          <ul style={{ margin: '.5rem 0 0 1rem' }}>
-            {bullets.map((b, i) => <li key={i}>{b}</li>)}
-          </ul>
+    <article className={`proj-card${featured ? ' proj-card--featured' : ''}`}>
+      {image ? (
+        <img
+          src={image}
+          alt={title}
+          className="proj-card__img"
+          loading="lazy"
+        />
+      ) : (
+        <div className={`proj-card__placeholder proj-card__placeholder--${featured ? 'feat' : 'sm'}`}>
+          {type}
+        </div>
+      )}
+
+      <div className="proj-card__body">
+        <p className="proj-card__type">{type}</p>
+        <h3 className="proj-card__title">{title}</h3>
+        <p className="proj-card__desc">{description}</p>
+
+        {tags.length > 0 && (
+          <div className="proj-card__tags">
+            {tags.map(t => <span key={t} className="tag">{t}</span>)}
+          </div>
         )}
 
-        {tags?.length > 0 && (
-          <div className="project-tags">{tags.map(t => <span key={t}>{t}</span>)}</div>
-        )}
-
-        {(github || demo || link) && (
-          <div className="cta-row">
+        {hasLinks && (
+          <div className="proj-card__links">
             {github && (
-              <a className="icon-btn" href={github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <FaGithub /><span>Code</span>
+              <a
+                href={github}
+                target="_blank"
+                rel="noreferrer"
+                className="card-link"
+                aria-label={`View ${title} source on GitHub`}
+              >
+                <FiGithub size={14} />
+                Source
               </a>
             )}
-            {(demo || link) && (
-              <a className="icon-btn" href={demo || link} target="_blank" rel="noopener noreferrer">
-                <FiExternalLink /><span>Live</span>
+            {demo && (
+              <a
+                href={demo}
+                target="_blank"
+                rel="noreferrer"
+                className="card-link"
+                aria-label={`View ${title} live demo`}
+              >
+                <FiExternalLink size={14} />
+                Live Demo
               </a>
             )}
           </div>
