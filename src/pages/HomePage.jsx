@@ -5,8 +5,6 @@ import ProjectCard from '../components/ProjectCard'
 
 const RESUME_URL = 'https://drive.google.com/file/d/13OaCgMhfXAHl1_FqjMNcnl_pNzI-KGGc/view?usp=sharing'
 
-const FEATURED_IDS = ['evadegpt', 'voiceforge', 'fire-robot']
-
 const SKILLS = [
   {
     label: 'Languages & Frameworks',
@@ -35,7 +33,7 @@ const SKILLS = [
 ]
 
 export default function HomePage() {
-  const featured = projects.filter(p => FEATURED_IDS.includes(p.id))
+  const homeProjects = projects
 
   return (
     <>
@@ -178,7 +176,7 @@ export default function HomePage() {
           </div>
 
           <div className="proj-grid proj-grid--home">
-            {featured.map((p, i) => (
+            {homeProjects.map((p, i) => (
               <ProjectCard key={p.id} project={{ ...p, featured: i === 0 }} />
             ))}
           </div>
