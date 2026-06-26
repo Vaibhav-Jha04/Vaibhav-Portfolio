@@ -2,30 +2,31 @@ import { Link } from 'react-router-dom'
 import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
 import { projects } from '../data/projects'
 import ProjectCard from '../components/ProjectCard'
-import CV from '../assets/CV_Vaibhav_2025.pdf'
 
-const FEATURED_IDS = ['evadegpt', 'fire-robot', 'aka-color']
+const RESUME_URL = 'https://drive.google.com/file/d/13OaCgMhfXAHl1_FqjMNcnl_pNzI-KGGc/view?usp=sharing'
+
+const FEATURED_IDS = ['evadegpt', 'voiceforge', 'fire-robot']
 
 const SKILLS = [
   {
-    label: 'Languages',
-    items: ['Python', 'JavaScript', 'TypeScript', 'C++', 'SQL'],
+    label: 'Languages & Frameworks',
+    items: ['Python', 'JavaScript', 'TypeScript', 'C++', 'React', 'Next.js', 'Node.js', 'SQL'],
   },
   {
     label: 'AI & Machine Learning',
-    items: ['TensorFlow', 'PyTorch', 'Detectron2', 'OpenCV', 'scikit-learn', 'Pandas'],
+    items: ['HuggingFace Transformers', 'TensorFlow', 'scikit-learn', 'OpenCV', 'NLTK', 'spaCy', 'NLP', 'Pandas'],
   },
   {
-    label: 'Web & App',
-    items: ['Next.js', 'React', 'React Native', 'FastAPI', 'Node.js'],
+    label: 'Data & Backend',
+    items: ['Azure Data Lake (ADLS)', 'PySpark', 'Apache Kafka', 'DB2', 'Informatica', 'FastAPI'],
   },
   {
-    label: 'Infrastructure',
-    items: ['Docker', 'AWS', 'Vercel', 'Git'],
+    label: 'Cloud & DevOps',
+    items: ['AWS', 'Microsoft Azure', 'Docker', 'CI/CD', 'RunPod', 'Git'],
   },
   {
     label: 'Databases',
-    items: ['PostgreSQL', 'MongoDB', 'Supabase', 'MySQL'],
+    items: ['PostgreSQL', 'Supabase', 'MongoDB', 'MySQL', 'SQLite'],
   },
   {
     label: 'Integrations',
@@ -42,21 +43,21 @@ export default function HomePage() {
       <section id="home" className="hero">
         <div className="hero__inner">
           <div className="hero__eyebrow">
-            <span className="badge-avail">Available for roles · Graduating Oct 2025</span>
+            <span className="badge-avail">Available for roles · Computer Science graduate</span>
           </div>
           <h1 className="hero__name">Vaibhav Jha</h1>
           <p className="hero__role">Software Engineer &amp; AI Developer</p>
           <p className="hero__bio">
-            Final-year Computer Science student at Griffith University, specialising in AI and
-            Data Science. I've shipped a production SaaS, built computer vision pipelines, and
-            developed multi-robot systems. Looking for graduate roles in software engineering
-            or AI/ML.
+            Computer Science graduate (AI &amp; Data Science) from Griffith University. I founded and
+            shipped EvadeGPT — an AI SaaS now past 26,000+ signups — trained a 22B-parameter
+            language model, built data-pipeline tooling at Westpac, and develop multi-robot and
+            computer-vision systems. Looking for graduate roles in software engineering or AI/ML.
           </p>
           <div className="hero__actions">
             <Link to="/projects" className="btn btn-primary btn-md">
               View Projects
             </Link>
-            <a href={CV} download="CV_Vaibhav_Jha.pdf" className="btn btn-outline btn-md">
+            <a href={RESUME_URL} target="_blank" rel="noreferrer" className="btn btn-outline btn-md">
               Download Resume
             </a>
           </div>
@@ -72,20 +73,21 @@ export default function HomePage() {
           <div className="timeline" style={{ marginTop: '40px' }}>
             <div className="tl-item">
               <div>
-                <p className="tl-period">2025 – Present</p>
+                <p className="tl-period">Aug 2025 – Present</p>
                 <p className="tl-company">EvadeGPT.ai</p>
               </div>
               <div>
                 <h3 className="tl-title">Founder &amp; Software Engineer</h3>
                 <p className="tl-desc">
-                  Built and shipped EvadeGPT from scratch — a subscription SaaS that detects and
-                  rewrites AI-generated content to pass detection tools. Handled the full stack:
-                  Next.js frontend, FastAPI Python backend, Stripe billing, Supabase database, and
-                  Google OAuth. Reached 50+ early signups and processed 10,000+ words per day
-                  during initial testing.
+                  Independently built and launched a full-stack AI SaaS from zero to 26,000+ user
+                  signups. Custom-trained a proprietary 22B-parameter Llama humanisation model on a
+                  1.3M-sample dataset using HuggingFace Transformers on RunPod H100 GPUs, achieving
+                  output that evades major commercial and university AI detectors. Engineered the
+                  product on Next.js, Supabase, and Stripe with multi-currency billing, gamification
+                  mechanics, and referral leaderboards — now generating consistent subscription revenue.
                 </p>
                 <div className="tl-tags">
-                  {['Next.js', 'FastAPI', 'Python', 'Stripe', 'Supabase'].map(t => (
+                  {['Next.js', 'HuggingFace', 'Python', 'Stripe', 'Supabase', 'RunPod'].map(t => (
                     <span key={t} className="tag">{t}</span>
                   ))}
                 </div>
@@ -94,19 +96,43 @@ export default function HomePage() {
 
             <div className="tl-item">
               <div>
-                <p className="tl-period">Mar – Jun 2024</p>
-                <p className="tl-company">aka studio</p>
+                <p className="tl-period">Nov 2025 – May 2026</p>
+                <p className="tl-company">Westpac Banking Corp.</p>
+              </div>
+              <div>
+                <h3 className="tl-title">Software Engineer (Contract)</h3>
+                <p className="tl-desc">
+                  Built Python automated pipeline-generation tooling for Azure Data Lake Storage
+                  ingestion, architecting scalable config generation from IFF/IFS schema files to
+                  target a 4,000+ table DB2-to-ADLS migration and eliminate manual workflows.
+                  Developed OAuth-authenticated backend services and Copilot-integrated unit-test
+                  generation tooling, and maintained SQL and ADLS workflows across AWS/Azure CI/CD
+                  pipelines, monitoring, and compliance reviews.
+                </p>
+                <div className="tl-tags">
+                  {['Python', 'Azure ADLS', 'PySpark', 'DB2', 'SQL', 'CI/CD'].map(t => (
+                    <span key={t} className="tag">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="tl-item">
+              <div>
+                <p className="tl-period">Jan – Jun 2024</p>
+                <p className="tl-company">AKA Studios</p>
               </div>
               <div>
                 <h3 className="tl-title">Software Engineer Intern</h3>
                 <p className="tl-desc">
-                  Developed an AI Colour Management System for an interactive media studio using
-                  Python and OpenCV. The system automated real-time colour tracking and correction,
-                  reducing manual adjustment time by approximately 40% and enabling reliable profile
-                  prediction across multiple display resolutions.
+                  Built a multi-page Python desktop app (NCM App) in CustomTkinter with a modular,
+                  frame-based architecture and dynamic page routing. Developed a real-time colour
+                  capture and analysis pipeline using OpenCV and Pillow for per-pixel detection
+                  across RGB/HEX/CMYK/HSL/HSV, plus K-Means palette extraction via scikit-learn and
+                  ColorThief. Delivered the full application independently within the 6-month internship.
                 </p>
                 <div className="tl-tags">
-                  {['Python', 'OpenCV', 'Machine Learning', 'Computer Vision'].map(t => (
+                  {['Python', 'OpenCV', 'scikit-learn', 'CustomTkinter'].map(t => (
                     <span key={t} className="tag">{t}</span>
                   ))}
                 </div>
@@ -115,16 +141,23 @@ export default function HomePage() {
 
             <div className="tl-item">
               <div>
-                <p className="tl-period">Jan 2022 – Present</p>
-                <p className="tl-company">Woolworths</p>
+                <p className="tl-period">May 2022 – Nov 2023</p>
+                <p className="tl-company">HearLocket Jewelry</p>
               </div>
               <div>
-                <h3 className="tl-title">Customer Service Officer</h3>
+                <h3 className="tl-title">Software Developer &amp; Marketing Specialist</h3>
                 <p className="tl-desc">
-                  Handled day-to-day customer-facing operations alongside a full-time CS degree.
-                  Developed strong communication, problem-solving, and time-management skills in a
-                  high-throughput retail environment.
+                  Designed and built a full-stack e-commerce web app with Next.js, React, Node.js,
+                  and Supabase, with Stripe payments and a custom CMS for product and inventory
+                  management. Built conversion-optimised landing pages and ran end-to-end Facebook
+                  Ads campaigns generating over $470,000 AUD in revenue across the 2022 Black Friday
+                  period.
                 </p>
+                <div className="tl-tags">
+                  {['Next.js', 'React', 'Node.js', 'Supabase', 'Stripe'].map(t => (
+                    <span key={t} className="tag">{t}</span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -192,8 +225,8 @@ export default function HomePage() {
               marginBottom: '32px',
             }}
           >
-            Open to graduate software engineering and AI/ML roles. Based in Australia,
-            graduating October 2025. Response time is typically within one business day.
+            Open to graduate software engineering and AI/ML roles. Based on the Gold Coast,
+            Australia. Response time is typically within one business day.
           </p>
           <a href="mailto:Vaibhav130304@gmail.com" className="btn btn-primary btn-md">
             Send an email
@@ -201,7 +234,7 @@ export default function HomePage() {
 
           <div className="contact-links">
             <a
-              href="https://github.com/VaibhavJha-github"
+              href="https://github.com/Vaibhav-Jha04"
               target="_blank"
               rel="noreferrer"
               className="contact-link"
@@ -229,7 +262,7 @@ export default function HomePage() {
       {/* ── Footer ────────────────────────────────────────── */}
       <footer className="footer">
         <div className="footer__inner">
-          <p className="footer__text">© 2025 Vaibhav Jha. All rights reserved.</p>
+          <p className="footer__text">© 2026 Vaibhav Jha. All rights reserved.</p>
           <p className="footer__text">Built with React &amp; Vite</p>
         </div>
       </footer>

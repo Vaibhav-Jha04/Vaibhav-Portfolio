@@ -17,7 +17,7 @@ export default function Sidebar() {
       </nav>
 
       <div className="social-links">
-        <a href="https://github.com/VaibhavJha-github?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <a href="https://github.com/Vaibhav-Jha04?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
           <FaGithub />
         </a>
         <a href="https://www.linkedin.com/in/vaibhav-jha-6b6b46221/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">

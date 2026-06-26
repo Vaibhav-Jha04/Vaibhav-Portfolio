@@ -34,7 +34,7 @@ export default function ProjectsPage() {
 
       <footer className="footer">
         <div className="footer__inner">
-          <p className="footer__text">© 2025 Vaibhav Jha. All rights reserved.</p>
+          <p className="footer__text">© 2026 Vaibhav Jha. All rights reserved.</p>
           <Link to="/" className="footer__text" style={{ color: 'var(--text-2)' }}>
             Back to home
           </Link>
