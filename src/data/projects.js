@@ -1,8 +1,5 @@
 import EvadeImg    from '../assets/evadegpt.jpg'
 import FireImg     from '../assets/firefighter.png'
-import FitnessImg  from '../assets/fitnessvibes.png'
-import EcomImg     from '../assets/fakeecom.png'
-import TicTacImg   from '../assets/tictactoe.png'
 import VoiceImg    from '../assets/voiceforge.jpg'
 import SumOneImg   from '../assets/sumofone.jpg'
 import WeatherImg  from '../assets/weatherbot.jpg'
@@ -87,72 +84,6 @@ export const projects = [
     tags:        ['C++', 'ROS', 'Gazebo', 'PAT', 'Python'],
     image:       FireImg,
     github:      `${GH}/ROS-PAT-Autonomous-Firefighting-Simulation`,
-    demo:        null,
-    featured:    false,
-  },
-  {
-    id:          'aka-color',
-    title:       'AI Colour Management System',
-    type:        'Computer Vision',
-    description: 'Automated colour tracking and management system built for aka studio during an internship. Reduced manual colour correction time by approximately 40% through real-time OpenCV processing.',
-    tags:        ['Python', 'OpenCV', 'Machine Learning'],
-    image:       null,
-    github:      null,
-    demo:        null,
-    featured:    false,
-  },
-  {
-    id:          'fitness-app',
-    title:       'React Native Fitness App',
-    type:        'Mobile App',
-    description: 'A cross-platform fitness tracking mobile app with workout logging, an exercise library, and step-by-step instructions. Built with React Native and TypeScript.',
-    tags:        ['React Native', 'TypeScript'],
-    image:       FitnessImg,
-    github:      `${GH}/FitnessApp-ReactNative`,
-    demo:        null,
-    featured:    false,
-  },
-  {
-    id:          'fake-store',
-    title:       'Fake Store E-commerce App',
-    type:        'Mobile App',
-    description: 'A feature-complete e-commerce mobile app with cart management, product browsing, and API integration. Demonstrates Redux Toolkit state management patterns.',
-    tags:        ['React Native', 'Redux Toolkit', 'JavaScript'],
-    image:       EcomImg,
-    github:      `${GH}/FakeStore-React-Native`,
-    demo:        null,
-    featured:    false,
-  },
-  {
-    id:          'job-analytics',
-    title:       'Job Market Analytics Dashboard',
-    type:        'Data Science',
-    description: 'Exploratory data analysis of job market trends. Interactive Plotly and Seaborn dashboards reveal demand patterns across industries, locations, and role types.',
-    tags:        ['Python', 'Pandas', 'Plotly', 'Seaborn', 'Matplotlib'],
-    image:       null,
-    github:      `${GH}`,
-    demo:        null,
-    featured:    false,
-  },
-  {
-    id:          'cv-detect',
-    title:       'Fashion-MNIST & Detectron2',
-    type:        'Computer Vision',
-    description: 'Image classification on Fashion-MNIST with CNN architectures, plus object detection experiments using Facebook\'s Detectron2. Compares PyTorch and TensorFlow implementations.',
-    tags:        ['Python', 'TensorFlow', 'PyTorch', 'Detectron2', 'OpenCV'],
-    image:       null,
-    github:      `${GH}`,
-    demo:        null,
-    featured:    false,
-  },
-  {
-    id:          'tictactoe',
-    title:       'Tic-Tac-Toe',
-    type:        'Web Game',
-    description: 'A classic Tic-Tac-Toe game in vanilla JavaScript. Win detection algorithm, clean interface, and no external dependencies.',
-    tags:        ['JavaScript', 'HTML', 'CSS'],
-    image:       TicTacImg,
-    github:      `${GH}/JavaScript-TicTacToe-Game`,
     demo:        null,
     featured:    false,
   },
