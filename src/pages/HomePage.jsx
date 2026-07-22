@@ -1,10 +1,7 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FiArrowUpRight } from 'react-icons/fi'
 import EvadeImg from '../assets/evadegpt.jpg'
 import ProfileImg from '../assets/profile.jpg'
-import LyraImg from '../assets/lyra.png'
-import WestpacImg from '../assets/westpac.png'
 
 const RESUME_URL = 'https://drive.google.com/file/d/13OaCgMhfXAHl1_FqjMNcnl_pNzI-KGGc/view?usp=sharing'
 
@@ -16,7 +13,6 @@ const JOBS = [
     period: 'Jul 2026 – Present',
     desc: 'Software engineering for the top 1% of startups in Silicon Valley.',
     stack: null,
-    img: LyraImg,
   },
   {
     company: 'EvadeGPT.ai',
@@ -25,7 +21,6 @@ const JOBS = [
     period: 'Aug 2025 – Jul 2026',
     desc: 'Built and launched a full-stack AI SaaS from zero to 26,000+ signups. Custom-trained a 22B-parameter Llama humanisation model on a 1.3M-sample dataset using H100 GPUs, evading major commercial and university AI detectors. Shipped the product on Next.js, Supabase, and Stripe with multi-currency billing, gamification, and referral leaderboards — still generating subscription revenue.',
     stack: 'Next.js · HuggingFace · Python · Stripe · Supabase · RunPod',
-    img: EvadeImg,
   },
   {
     company: 'Westpac Banking Corp.',
@@ -34,7 +29,6 @@ const JOBS = [
     period: 'Nov 2025 – May 2026',
     desc: 'Built Python pipeline-generation tooling for Azure Data Lake ingestion, generating configs from IFF/IFS schema files to target a 4,000+ table DB2-to-ADLS migration. Developed OAuth-authenticated backend services and Copilot-integrated unit-test tooling across AWS/Azure CI/CD pipelines.',
     stack: 'Python · Azure ADLS · PySpark · DB2 · SQL · CI/CD',
-    img: WestpacImg,
   },
   {
     company: 'AKA Studios',
@@ -109,21 +103,11 @@ const TOOLBOX = [
 ]
 
 export default function HomePage() {
-  const [hoveredJob, setHoveredJob] = useState(null)
-  const previewImages = [
-    { key: 'me', src: ProfileImg, alt: 'Portrait of Vaibhav Jha' },
-    ...JOBS.filter(j => j.img).map(j => ({ key: j.company, src: j.img, alt: j.company })),
-  ]
-  const activeKey = JOBS.find(j => j.company === hoveredJob)?.img ? hoveredJob : 'me'
-
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────── */}
       <section id="home" className="hero">
         <div className="wrap">
-          <div className="hero__avatar">
-            <img src={ProfileImg} alt="Vaibhav Jha" />
-          </div>
           <p className="hero__status">FDE Engineer @ Lyra</p>
           <h1 className="hero__name">Vaibhav Jha</h1>
           <p className="hero__role">Software Engineer &amp; AI Developer</p>
@@ -151,12 +135,7 @@ export default function HomePage() {
             <h2 className="sec-head">Experience</h2>
             <hr className="sec-rule" />
             {JOBS.map(job => (
-              <article
-                key={job.company}
-                className="job"
-                onMouseEnter={() => setHoveredJob(job.company)}
-                onMouseLeave={() => setHoveredJob(null)}
-              >
+              <article key={job.company} className="job">
                 <div className="job__top">
                   <h3 className="job__company">
                     {job.url
@@ -173,15 +152,7 @@ export default function HomePage() {
           </div>
 
           <div className="exp-preview" aria-hidden="true">
-            {previewImages.map(img => (
-              <img
-                key={img.key}
-                src={img.src}
-                alt={img.alt}
-                loading="lazy"
-                className={activeKey === img.key ? 'is-active' : ''}
-              />
-            ))}
+            <img src={ProfileImg} alt="Portrait of Vaibhav Jha" loading="lazy" className="is-active" />
           </div>
         </div>
       </section>
@@ -240,7 +211,7 @@ export default function HomePage() {
             <h3 className="edu__school">Griffith University</h3>
             <p className="job__period">2022 – 2025</p>
           </div>
-          <p className="edu__degree">Bachelor of Computer Science — AI &amp; Data Science</p>
+          <p className="edu__degree">Bachelor of Computer Science — AI &amp; Data Science · GPA 6.0/7.0</p>
         </div>
       </section>
 
