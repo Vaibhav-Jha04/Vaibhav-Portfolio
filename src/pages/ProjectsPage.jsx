@@ -8,24 +8,19 @@ export default function ProjectsPage() {
     <>
       <div className="page-header">
         <div className="wrap">
-          <Link
-            to="/"
-            className="btn btn-outline btn-sm"
-            style={{ marginBottom: '32px', display: 'inline-flex' }}
-          >
-            <FiArrowLeft size={14} /> Back
+          <Link to="/" className="back-link">
+            <FiArrowLeft size={13} /> back
           </Link>
-          <p className="section-label">Projects</p>
-          <h1 className="section-title">Everything I've built</h1>
-          <p className="section-sub">
-            A complete list of personal, academic, and professional projects — spanning AI/ML,
-            full-stack web, mobile, robotics, and data science.
+          <h1 className="sec-head">all projects</h1>
+          <p className="page-sub">
+            Personal, academic, and professional work — AI/ML, full-stack web, quant trading,
+            and robotics.
           </p>
         </div>
       </div>
 
-      <div className="wrap" style={{ paddingBottom: '96px' }}>
-        <div className="proj-grid proj-grid--all">
+      <div className="wrap">
+        <div className="proj-stack">
           {projects.map(p => (
             <ProjectCard key={p.id} project={p} />
           ))}
@@ -34,10 +29,10 @@ export default function ProjectsPage() {
 
       <footer className="footer">
         <div className="footer__inner">
-          <p className="footer__text">© 2026 Vaibhav Jha. All rights reserved.</p>
-          <Link to="/" className="footer__text" style={{ color: 'var(--text-2)' }}>
-            Back to home
-          </Link>
+          <p className="footer__text">2026 / Vaibhav Jha</p>
+          <p className="footer__text">
+            <a href="mailto:Vaibhav130304@gmail.com">vaibhav130304@gmail.com</a>
+          </p>
         </div>
       </footer>
     </>

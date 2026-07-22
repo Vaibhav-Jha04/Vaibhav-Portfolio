@@ -1,37 +1,26 @@
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
 
 export default function ProjectCard({ project }) {
-  const { title, type, description, tags = [], image, github, demo, featured } = project
-
-  const hasLinks = github || demo
+  const { title, type, description, tags = [], image, github, demo } = project
 
   return (
-    <article className={`proj-card${featured ? ' proj-card--featured' : ''}`}>
-      {image ? (
-        <img
-          src={image}
-          alt={title}
-          className="proj-card__img"
-          loading="lazy"
-        />
-      ) : (
-        <div className={`proj-card__placeholder proj-card__placeholder--${featured ? 'feat' : 'sm'}`}>
-          {type}
-        </div>
+    <article className="proj-card">
+      {image && (
+        <img src={image} alt={title} className="proj-card__img" loading="lazy" />
       )}
 
       <div className="proj-card__body">
-        <p className="proj-card__type">{type}</p>
-        <h3 className="proj-card__title">{title}</h3>
+        <div className="proj-card__top">
+          <h3 className="proj-card__title">{title.toLowerCase()}</h3>
+          <p className="proj-card__type">{type}</p>
+        </div>
         <p className="proj-card__desc">{description}</p>
 
         {tags.length > 0 && (
-          <div className="proj-card__tags">
-            {tags.map(t => <span key={t} className="tag">{t}</span>)}
-          </div>
+          <p className="proj-card__stack">{tags.join(' · ')}</p>
         )}
 
-        {hasLinks && (
+        {(github || demo) && (
           <div className="proj-card__links">
             {github && (
               <a
@@ -51,10 +40,10 @@ export default function ProjectCard({ project }) {
                 target="_blank"
                 rel="noreferrer"
                 className="card-link"
-                aria-label={`View ${title} live demo`}
+                aria-label={`View ${title} live`}
               >
                 <FiExternalLink size={14} />
-                Live Demo
+                Live
               </a>
             )}
           </div>
