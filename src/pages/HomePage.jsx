@@ -41,7 +41,7 @@ export default function HomePage() {
       <section id="home" className="hero">
         <div className="hero__inner">
           <div className="hero__eyebrow">
-            <span className="badge-avail">Available for roles · Computer Science graduate</span>
+            <span className="badge-avail">FDE Engineer at Lyra</span>
           </div>
           <h1 className="hero__name">Vaibhav Jha</h1>
           <p className="hero__role">Software Engineer &amp; AI Developer</p>
@@ -71,7 +71,22 @@ export default function HomePage() {
           <div className="timeline" style={{ marginTop: '40px' }}>
             <div className="tl-item">
               <div>
-                <p className="tl-period">Aug 2025 – Present</p>
+                <p className="tl-period">Jul 2026 – Present</p>
+                <p className="tl-company">
+                  <a href="https://lyratechnologies.com.au/" target="_blank" rel="noreferrer">Lyra</a>
+                </p>
+              </div>
+              <div>
+                <h3 className="tl-title">FDE Engineer</h3>
+                <p className="tl-desc">
+                  Software engineering for the top 1% of startups in Silicon Valley.
+                </p>
+              </div>
+            </div>
+
+            <div className="tl-item">
+              <div>
+                <p className="tl-period">Aug 2025 – Jul 2026</p>
                 <p className="tl-company">EvadeGPT.ai</p>
               </div>
               <div>
